@@ -1,3 +1,4 @@
+import 'react-native-url-polyfill/auto';
 import '@/global.css';
 
 import { NAV_THEME } from '@/lib/theme';
@@ -18,7 +19,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={NAV_THEME[colorScheme ?? 'light']}>
       <StatusBar style={colorScheme === 'dark' ? 'light' : 'dark'} />
-      <Stack />
+      <Stack screenOptions={{ headerShown: false }} />
       <PortalHost />
     </ThemeProvider>
   );
