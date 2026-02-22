@@ -27,7 +27,7 @@ UsOS aims to be:
 
 New users go through onboarding where they:
 
-1. Create their **Us** (couple space) or join one via invite code/link.
+1. Create their **Us** (couple space) or join one via name + password (see [Join Flow](join-flow.md)).
 2. Optionally set a **Couple Key** (a passcode lock screen) for extra privacy on-device.
 3. Enter the UsOS home screen where features are accessible.
 
@@ -121,7 +121,7 @@ Design principles:
 ### Onboarding
 
 - Sign up / log in
-- Create Us (make a couple space) OR Join Us (invite code/link)
+- Create Us (make a couple space) OR Join Us (name + password)
 - Set Couple Key (optional)
 - Enter Home Screen
 

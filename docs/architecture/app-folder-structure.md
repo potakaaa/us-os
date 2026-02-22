@@ -19,10 +19,11 @@ app/
 │   ├── sign-up.tsx
 │   └── check-email.tsx
 │
-├── (onboarding)/            # Create Us flow
+├── (onboarding)/            # Create Us / Join Us flow
 │   ├── _layout.tsx          # Shared onboarding layout
 │   ├── create-couple.tsx
-│   └── create-couple-password.tsx
+│   ├── create-couple-password.tsx
+│   └── join-couple.tsx
 │
 └── (app)/                   # Authenticated app screens
     ├── _layout.tsx          # Shared app layout
@@ -52,14 +53,15 @@ Screens for signing in, signing up, and email confirmation. URLs: `/sign-in`, `/
 | `sign-up.tsx` | Account creation with email confirmation |
 | `check-email.tsx` | Post-signup screen instructing user to verify email |
 
-### (onboarding) — Create Us Flow
+### (onboarding) — Create Us / Join Us Flow
 
-Screens for creating a couple space and optionally setting a couple key. URLs: `/create-couple`, `/create-couple-password`.
+Screens for creating a couple space, joining an existing one, and optionally setting a couple key. URLs: `/create-couple`, `/create-couple-password`, `/join-couple`.
 
 | File | Purpose |
 |------|---------|
-| `create-couple.tsx` | Create a new couple space (name input) |
+| `create-couple.tsx` | Create a new couple space (name input) or navigate to join |
 | `create-couple-password.tsx` | Set optional couple key / passcode |
+| `join-couple.tsx` | Join existing couple by entering name + password |
 
 ### (app) — Authenticated App Screens
 
@@ -81,6 +83,7 @@ flowchart TD
     checkEmail["check-email"]
     createCouple["create-couple"]
     createCouplePw["create-couple-password"]
+    joinCouple["join-couple"]
     home["home"]
 
     index -->|unauthenticated| signIn
@@ -90,7 +93,9 @@ flowchart TD
     signUp --> checkEmail
     checkEmail --> signIn
     createCouple --> createCouplePw
+    createCouple -->|Join existing| joinCouple
     createCouplePw --> home
+    joinCouple --> home
 ```
 
 ---
@@ -117,7 +122,7 @@ Parentheses `()` create **route groups** that organize files without changing th
 ## Guidelines for Adding New Screens
 
 1. **Auth-related** (login, forgot password, etc.) → `app/(auth)/`
-2. **Onboarding** (join couple, invite flow, etc.) → `app/(onboarding)/`
+2. **Onboarding** (create couple, join couple, etc.) → `app/(onboarding)/`
 3. **Main app** (photos, letters, notes, calendar, settings) → `app/(app)/`
 
 For new main app features, add files under `app/(app)/`, e.g.:
