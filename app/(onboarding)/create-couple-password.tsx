@@ -135,7 +135,8 @@ export default function CreateCouplePasswordScreen() {
             Secure Your Space
           </Text>
           <Text variant="muted" className="text-center">
-            Create a password to lock your couple space
+            Create a password to lock your couple space. Share your couple space
+            name and password with your partner so they can join.
           </Text>
         </View>
 

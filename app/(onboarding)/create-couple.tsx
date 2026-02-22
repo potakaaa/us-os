@@ -111,6 +111,13 @@ export default function CreateCoupleScreen() {
         >
           <Text>Create Couple Space</Text>
         </Button>
+        <Button
+          variant="ghost"
+          onPress={() => router.push('/join-couple')}
+          className="w-full"
+        >
+          <Text className="text-muted-foreground">Join existing couple</Text>
+        </Button>
       </View>
     </View>
   );

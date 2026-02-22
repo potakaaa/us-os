@@ -98,7 +98,7 @@ export default function HomeScreen() {
       className="flex-1 bg-background"
       contentContainerStyle={{
         paddingTop: insets.top + 20,
-        paddingBottom: insets.bottom + 120,
+        paddingBottom: insets.bottom,
         paddingHorizontal: 20,
       }}
       showsVerticalScrollIndicator={false}>
